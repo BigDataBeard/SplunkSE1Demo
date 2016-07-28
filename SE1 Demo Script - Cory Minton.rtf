@@ -1,0 +1,255 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red255\green251\blue149;\red0\green3\blue255;\red251\green0\blue7;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\fs28 \cf0 \expnd0\expndtw0\kerning0
+SE1 Demo Script\
+Cory Minton - 2016\
+\
+\cb2 #if you see something highlighted, it is probably a click or command entry.\
+\
+Have browser opened to Splunk and click on the b-leaf demo app and have the lightbulb up\cb1 \
+\
+Setup a Scenario: \
+\
+Let\'92s say that you are Project Manager in the marketing department at MasterCard. In this case, MasterCard happens to already be a very good Splunk customer (and a good EMC customer running Splunk on EMC, but I digress), but the use cases for Splunk have been purely focused on IT Operations and a little bit of security, but definitely not really used in the lines of business. \
+\
+The untold story here is the CTO and CIO love Splunk and want help funding an upcoming expansion to their license to accommodate not only their use cases, but some additional ones that will make this purchase easier to justify with the CFO. \'a0Because Splunk was a tool that started in IT, it represents a unique opportunity for the CIO and CTO to be more transformational to the business and garner support/funding previously help hostage by the EDW/BW teams. \'a0The CIO and CTO are fostering these conversations, but it has been made to appear totally selfless and focused on the business value\'85not that there\'92s anything wrong with that. \'a0I am playing the role of an EMC Splunk Ninja who has relationships outside of IT and has been asked to met with you to explore expanding use cases for Splunk at MasterCard. \
+\
+Begin Meeting: \
+\
+Hi Timothy, \
+\
+So this is a follow up to the meeting we had a few weeks back when I gave you that 30 minute talk on the big picture of why Splunk is so awesome. \'a0If you recall, we talked a lot about: \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+how Splunk can make machine data usable and valuable to everyone\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+how it can scale from your desktop to 1000s of machines\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+how easy is it to get data into splunk and apply that universal index giving you rapid time to value\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+and how it has become a true platform for enterprise analytics\'a0\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 But that was just talk and today my hope is to put some meat on that bone and show show the basics of Splunk to get you comfortable with how some of the basic features of Splunk work, then jump right into a real life scenario I have crafted that I think will be very close to some of your current project objectives. \
+\
+And let\'92s try to keep this conversational. \'a0I have some ideas of what I want to show you and some of what I show you may spur thoughts for you that I would be most happy to explore. \'a0If you want me to explain something in more detail, just ask. \'a0If you want me to move on, it\'92s cool\'85I did put on my big boy pants today. \'a0So, feel free to interrupt me and help me make this a valuable time investment for you. \'a0Cool? \
+\
+Alright, let\'92s get started. \
+\
+\cb2 click on \cf3 SPRAD\cf0 \cb1 \
+\
+Let\'92s talk about what we are going to cover. \'a0SPRAD stand for Search, Pivot, Report, Alert, Dashboard.\'a0 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\i \cf3 Unpack each of those topically\'85just talk through the keys to SPRAD with the breakdown on screen
+\i0 \cf0 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Click \cf3 Search\cf0  menu item.\cb1 \
+\
+Part of the beauty is natural language searching\'85it\'92s like google for all your data. \'a0try something like: \
+\
+\cb2 #enter search syntax\'a0\cb1 \
+\cb2 fail*\'a0\cb1 \
+\
+Notice all the field extractions and what machine data looks like when indexed. \
+\
+\cb2 #Enter the search syntax\'a0\cb1 \
+\cb2 index=\'94main\'94\'a0\cb1 \
+\
+Splunk give you the opportunity to put all types of data into a single repository for simple search, which means you don;t have to go poking around to lots of different databases or repositories to find the data. \
+\
+\cb2 Choose the \cf3 Last 60 minutes\cf0  in the time picker.\cb1 \
+\
+And you will find out very quickly that Splunk organizes data very neatly into time-series format, making it super simple to focus your efforts at finding meaningful insight in your data. \
+\
+Also notice the histogram that is populating here\'85this visualization helps our human eyes start to pick out patters that might lead to insights. \'a0Again, half the battle for a lot of analytics projects is finding patterns, and no computer is as good as your brain at that, so we just try to power your intuition as fast as possible \
+\
+Then on the left, notice that Splunk has been smart enough to start to pull out interesting fields for the data we have begun to investigate. \'a0Splunk does not know what all these fields are, it simply knows that with its schema on the fly process, these fields seemed interesting based on values and content. \'a0Now, if we were looking for problems in a process, what works might we be looking for? \
+\
+Maybe errors? \'a0 \
+\
+\cb2 Click on \cf3 "ERROR_MESSAGE"\cf0 \cb1 \
+\
+Notice how we automagically got insights on the top 10 occurring types of error and are presented with options to do some statistical operations to the data we are currently searching, just by clicking the mouse, not by writing code? \'a0Pretty cool, right? \
+\
+Now, you will notice that we are seeing a lot of events. \'a0That is cool and all, but may not help us solve the problem we are after. \'a0Sow what if we were to know that the issue we are trying to solve is really around minimizing errors in a customer online transaction so that we can improve transaction conversion? \'a0So we talk with the IT team and we figure out that all the data we want is coming from our POS systems and the types of issues we are interested in are in the field \'93respCode\'94 and their value is some number in the 200 range, which is system type errors\'85so we type: \
+\
+\cb2 #Update the search syntax in search bar to:\cb1 \
+\cb2 index=\'94main\'94 sourcetype=\'94pos:bus\'94 respCode=\'942*\'94\'a0\cb1 \
+\
+Now, there is still a lot of events showing up here, so let's look at some ways to get more granular. \'a0So far, we really haven't used any complex language for query, more human language type interactions and click of the mouse, but Splunk also allows users to interact with Search using an extensive, transformative language options for data analysis. \
+\
+Let's try making this data more visually pleasing with one of those transformations... \
+\
+\cb2 #Update the search syntax to:\cb1 \
+\cb2 index=\'94main\'94 sourcetype=\'94pos:bus\'94 respCode=\'942*\'94 | timechart count by ERROR_MESSAGE\cb1 \
+\cb2 Select\'a0\cf3 \'93visualization"\cf0 \cb1 \
+\cb2 Then change to \cf3 column chart\cf0  and \cf3 format to stacked\cf0 \cb1 \
+\cb2 save as report to show how to make this repeatable\cb1 \
+\cb2 create a dashboard for tim with this as a panel\cb1 \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 Pivots
+\b0 \
+\
+In your role, you may or may not ever want to deal with data in this way. \'a0Or maybe folks on your team may not want to. \'a0Either way, Splunk gives you a powerful interaction method with your data that abstracts the search creation part of this process, allowing users to really focus on using the data. \'a0It\'92s called Pivot. \'a0A good way to think about this is that Pivot is to search what a spreadsheet is to a calculator. \'a0Sure you can work out every problem with a little effort, but why not accelerate and automate the calculations and data manipulations so your work can scale? \'a0Many times, business users want that point and click experience, so the goal of Pivot is to pre-arrange data into useful data collections and models that powers that desired end use experience. \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 #Click \cf3 Pivot\cf0  menu item\cb1 \
+\cb2 #Click the \cf3 Pivot Baseline with terms\cf0  knowledge object\cb1 \
+\
+Notice the look and feel here. \'a0Although search is still part of this tool, we don\'92t see it. \'a0We see a graphical interface for building data transformations and visualizations. \'a0No need to fool with messy, raw data, but rather we work with recipes designed around Data Models. \'a0Again, the key here is immediate gratification with data. \
+\
+\cb2 Choose the \cf3 Last 60 minutes\cf0  in the time picker\cb1 \
+\
+time series constant\'a0 \
+point and click \
+instantaneous analysis \
+\
+So let\'92s continue with the error thread from earlier... \
+\
+\cb2 click menu under \cf3 Split Rows\cf0 \cb1 \
+\cb2 select \cf3 ERROR_MESSAGE\cf0 \cb1 \
+\
+easy, instant gratification \
+\
+\cb2 pick the Pie Chart from the visualization picker.\cb1 \
+\
+That\'92s what I like to call the quick pick of visualizations. \'a0It gives the user great control and simple tools to build powerful data products in a short time. \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 Reports
+\b0 \
+\
+Now, we have shown two ways to interact with the data in a very flexible way, searching and pivoting out way to the answers we seek. \'a0But not everyone wants to find the answers; rather there are folks out there who just need answers delivered to them. \'a0When you want to automate the distribution of knowledge and collaboration, reports are there for you. \'a0They take in all the search experience and proprietary knowledge that fuels your operations landscape, but simply pass it on\'85whether on demand, on a schedule, or via email. \
+\
+Think of it this way, reports simply recycle knowledge that is important to your group and automate the results\'85with no need for consumers of those reports to have any Splunk training. \'a0This is how you share knowledge\'85and we know sharing is caring! \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Click on reports menu item.\cb1 \
+\
+The goal here with reports is to expose a broader audience to the data and visualizations you and your team have created that will be helpful in making decisions and driving the business objectives. \
+\
+\cb2 Pick the Baseline report.\cb1 \
+\
+Each report is a knowledge object that holds certain information applicable to some scenario in your environment. \'a0Users might all use this report as the baseline to build other reports, visualizations or dashboards. \
+\
+\cb2 Click on reports menu item.\cb1 \
+\cb2 Pick the Baseline with terms report.\cb1 \
+\
+By adding additional terms, we have given this automated report a bit more granularity, specifically we are looking now at only events coming out of our POS systems. \'a0Again, this may be handy for folks collaborating on specific business needs to give a consistent starting point and lens by which to view the data without all the clutter of too much data to analyze. \
+\
+\cb2 Click on reports menu item.\cb1 \
+\cb2 Pick the Baseline with terms transformed into a time chart report.\cb1 \
+\
+As we have said before, the human eye and mind are great at patters, so maybe the best thing you can provide certain users is a consistent set of reports with visualizations. \'a0We have reduced the noise of data not pertinent to our business need and have given users an interactive tool to analyze the data. \'a0While we have abstracted the search work from view, it is absolutely still there, driving all we are doing. \'a0Advanced users could use reports as the jump off point for more detailed analysis using advanced search capabilities, or they can just be a visualization for less technical users\'85or just about anything in between. \
+\
+So reports are again super useful for collaboration, automation, and distribution of knowledge you and your team are creating in Splunk. \
+\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 Alerts
+\b0 \
+\
+The next thing we want to talk about is how we push data driven alerts into your operational processes, taking the knowledge you build in Splunk and allowing it to interact with workflows. \'a0When a condition is found, like say an application server not accessible, then you want to do something about it. \'a0Alerts allow you to build actions that layer in conditions across many parts of the enterprise and your technical assets. \'a0 \
+\
+The highlights for alerts are event notification as a baseline, then the ability to integrate that into your business processes and automate your runback as much as possible. \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Click on the Alerts menu item.\cb1 \
+\
+talk about the organization being similar and consistent. \
+\
+\cb2 Pick Alert Baseline for errors or failure alert\cb1 \
+\
+Results display shows the metadata about the alert and the results history, giving you the ability to look back into what triggered the alert. \
+\
+\cb2 click on View Results to show how it was triggered.\cb1 \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 Dashboard
+\b0 \
+\
+Dashboards are really the culmination of labor in which you consolidate knowledge for collaboration. \'a0A dashboard captures relevant KPIs, detailed analysis, and key transformational findings into interactive, collaborative, and prescriptive views that can be tailored for many use cases and stakeholder in your business. \'a0Think of dashboards as the reason we\'92ve been searching, reporting, pivoting and alerting\'85.it is the penultimate experience we can deliver back to a user. \'a0Dashboards are like air traffic controllers\'85proving all the essential information necessarily to direct and maintain your operations. \'a0 \
+\
+The main objective of these dashboards is to consolidate knowledge in a way that fosters collaboration and communication of critical information.\'a0 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Click Dashboard menu item.\cb1 \
+\cb2 Click SPRAD sample dashboard\cb1 \
+\
+In this dashboard, we are showing simple the visualization of the work we\'92ve done over the last few minutes. \'a0Abstracting complexity away and simply presenting information visually. \'a0Breaking down cultural barriers through visual queues we all understand. \
+\
+While the complexity is abstracted, we have not lost the interactive nature of the knowledge objects we\'92ve built. \'a0Simply by hovering over any area, we can drill into the information and are offered unique abilities to leverage this knowledge further. \'a0 \
+\
+Ok, so you have a good view of the underlying tools that make up much of what Splunk enterprise is really all about. \'a0Any questions before I move on to a real life scenario I think you will find very relevant? \
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 \ul \ulc0 Scene Demo
+\b0 \ulnone \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \cb2 Click leaf app at top menu.\cb1 \
+\cb2 Return to main light bulb screen.\cb1 \
+\cb2 click scene.\cb1 \
+\
+\cb2 Click through.\cb1 \
+\
+Imagine you are a payment services provider. In your line of business you offer a variety of services such as pre-paid cards, online payment solutions and physical point-of-sale terminal devices. \
+\
+\cb2 lick through.\cb1 \
+\
+You are responsible for a new pre-paid card promotion. You have thirty days to achieve 30% market penetration. That means 
+\b \cf4 two thousand
+\b0 \cf0  new subscribrers. The business objective in the first three months is to retain 50% of new subscribers and average about 
+\b \cf4 $1.2M
+\b0 \cf0  in transactions per hour . \
+\
+\cb2 Click through.\cb1 \
+\
+In order to keep track of the progress in the new promotion, you will monitor electronic service requests from multiple access points through the the banking network; specifically, you are focused on specialized Web services and the physical point-of-sales devices. \
+\
+\cb2 Click through.\cb1 \
+\
+Splunk will acquire your data easily and quickly. Our Universal Machine Data Platform is open and extensible; it delivers integrated, end-to-end data collection, management and analysis which helps amplify visibility across your entire environment. \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 \cb2 Click \'93Continue to next tour"
+\b0 \cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\b \cf0 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0 \cf0 Again, the objectives here are: \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+in the first 30 days enlist 2000 new customers with a 30% engagement rate.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+in the first 90 days, retain 50% of new customers and average about $1.2M in transactions per hour.\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \
+To achieve our objectives, we want to insure that our systems operate smoothly and any error in the system can be removed to streamline the customer experience. \'a0 \
+\
+For the rest, I defaulted to the page 26 and beyond of the micro scripts. \
+}
